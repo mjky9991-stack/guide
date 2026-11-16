@@ -2,7 +2,7 @@
 
 바이낸스 앱에서 서브 계정(Sub-Account)을 만드는 방법을 실제 화면과 함께 9단계로 정리한 한국어 가이드입니다.
 
-- 웹 페이지: <https://mjky9991-stack.github.io/binance-subaccount-guide/>
+- 웹 페이지: <https://mjky9991-stack.github.io/guide/>
 - 단일 HTML 파일로 만들어져 있어서, 링크만 있으면 휴대폰·PC 어디서든 바로 열립니다.
 - 화면 이미지는 바이낸스 앱·웹 화면에 누를 곳만 표시해 넣었습니다.
 - 자료 출처: Binance 고객센터 FAQ 및 공개 가이드 (2026년 11월 기준 화면)
