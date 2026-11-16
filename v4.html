@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>바이낸스 서브 계정 만들기 · 휴대폰 앱 편</title>
+<meta name="description" content="바이낸스 앱에서 서브 계정(Sub-Account)을 만드는 방법을 실제 화면과 함께 9단계로 설명합니다.">
+<link rel="canonical" href="https://mjky9991-stack.github.io/guide/v4.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="바이낸스 모바일 가이드">
+<meta property="og:title" content="바이낸스 서브 계정 만들기 · 휴대폰 앱 편">
+<meta property="og:description" content="바이낸스 앱에서 서브 계정을 만드는 방법을 실제 화면과 함께 9단계로 쉽게 설명합니다.">
+<meta property="og:url" content="https://mjky9991-stack.github.io/guide/v4.html">
+<meta property="og:image" content="https://mjky9991-stack.github.io/guide/og-1200x630.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="바이낸스 서브 계정 만들기 가이드 미리보기">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="바이낸스 서브 계정 만들기 · 휴대폰 앱 편">
+<style>
+  :root{
+    --yellow:#F0B90B;
+    --yellow-soft:#FFF8E1;
+    --dark:#1E2329;
+    --body:#333B45;
+    --muted:#707A8A;
+    --line:#E7E9EE;
+    --bg:#F4F5F7;
+    --card:#FFFFFF;
+    --red:#E2262D;
+    --green:#0E9F6E;
+    --radius:20px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;color-scheme:light only}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Segoe UI",Roboto,sans-serif;
+    font-size:17px;
+    line-height:1.72;
+    word-break:keep-all;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px 64px}
+
+  /* ---------- hero ---------- */
+  header.hero{
+    background:linear-gradient(180deg,#FFF9E6 0%,#FFFDF6 100%);
+    border-bottom:1px solid var(--line);
+    padding:36px 20px 30px;
+    text-align:center;
+  }
+  .hero .badge{
+    display:inline-block;background:var(--dark);color:#F0B90B;
+    font-size:13px;font-weight:700;letter-spacing:.02em;
+    padding:6px 14px;border-radius:999px;margin-bottom:16px;
+  }
+  h1{
+    font-size:29px;line-height:1.32;margin:0 0 12px;
+    color:var(--dark);letter-spacing:-.02em;font-weight:800;
+  }
+  .hero p{margin:0;color:#5A6470;font-size:16px}
+  .hero .facts{
+    display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:20px;
+  }
+  .hero .facts span{
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:7px 14px;font-size:14px;color:#5A6470;font-weight:600;
+  }
+
+  /* ---------- blocks ---------- */
+  section{margin-top:32px}
+  h2{
+    font-size:21px;color:var(--dark);margin:0 0 6px;letter-spacing:-.01em;
+  }
+  .lead{color:var(--muted);font-size:15px;margin:0 0 16px}
+  .card{
+    background:var(--card);border-radius:var(--radius);padding:20px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.06);
+  }
+
+  /* intro card */
+  .intro p{margin:0}
+  .intro b{color:var(--dark)}
+
+  /* checklist */
+  ul.check{list-style:none;margin:0;padding:0}
+  ul.check li{
+    display:flex;gap:12px;padding:14px 0;border-bottom:1px dashed var(--line);
+  }
+  ul.check li:last-child{border-bottom:0;padding-bottom:0}
+  ul.check li:first-child{padding-top:0}
+  ul.check .ico{font-size:22px;line-height:1.3;flex:0 0 auto}
+  ul.check .txt strong{display:block;color:var(--dark);font-size:16px;margin-bottom:2px}
+  ul.check .txt > span{font-size:14.5px;color:var(--muted)}
+  .note-inline{
+    margin-top:14px;background:var(--yellow-soft);border-radius:14px;
+    padding:12px 14px;font-size:14.5px;color:#6B5600;
+  }
+
+  /* steps */
+  .step{
+    background:var(--card);border-radius:var(--radius);padding:22px 20px 20px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px rgba(16,24,40,.06);
+    margin-bottom:18px;
+  }
+  .step-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+  .num{
+    flex:0 0 auto;width:34px;height:34px;border-radius:11px;
+    background:var(--dark);color:#F0B90B;font-weight:800;font-size:16px;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  .step-head h3{
+    margin:0;font-size:18.5px;line-height:1.45;color:var(--dark);
+    letter-spacing:-.01em;font-weight:700;
+  }
+  figure{margin:0 0 16px;text-align:center}
+  figure img{
+    display:block;max-width:100%;height:auto;margin:0 auto;
+    border-radius:14px;border:1px solid var(--line);background:#0B0E11;
+  }
+  figure.phone img{max-width:270px}
+  figcaption{
+    font-size:13px;color:var(--muted);margin-top:9px;line-height:1.55;
+  }
+  .where{
+    font-size:15px;margin:0 0 12px;
+  }
+  .where b{color:var(--dark)}
+  ul.tap{list-style:none;margin:0;padding:0}
+  ul.tap li{
+    position:relative;padding-left:30px;margin-bottom:10px;font-size:15.5px;
+  }
+  ul.tap li:last-child{margin-bottom:0}
+  ul.tap .dot{
+    position:absolute;left:0;top:2px;width:21px;height:21px;border-radius:50%;
+    background:var(--red);color:#fff;font-size:12.5px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .ui{
+    display:inline-block;background:#FFF6D6;border:1px solid #F2DFA0;
+    border-radius:7px;padding:0 6px;font-size:.86em;font-weight:700;
+    color:#3A2E00 !important;line-height:1.6;white-space:nowrap;
+  }
+  .ko{color:var(--muted);font-size:.88em}
+  .why{
+    margin-top:14px;background:#F7F8FA;border-radius:14px;padding:12px 14px;
+    font-size:14.5px;color:#5A6470;
+  }
+  .why b{color:var(--dark)}
+
+  /* warning cards */
+  .warn{background:#FFF4E5;border:1px solid #FFE0B2}
+  .warn h3{color:#8A4B00}
+  .danger{background:#FDECEC;border:1px solid #F8D2D2}
+  .danger h3{color:#9B1C1C}
+
+  /* closing tips */
+  ul.tips{list-style:none;margin:0;padding:0}
+  ul.tips li{
+    display:flex;gap:11px;font-size:15.5px;padding:11px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  ul.tips li:last-child{border-bottom:0;padding-bottom:0}
+  ul.tips li:first-child{padding-top:0}
+  ul.tips .ico{flex:0 0 auto;font-size:19px;line-height:1.35}
+
+  /* faq */
+  details{
+    background:var(--card);border-radius:16px;padding:16px 18px;margin-bottom:10px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04);
+  }
+  details summary{
+    cursor:pointer;font-weight:700;color:var(--dark);font-size:15.5px;
+    list-style:none;display:flex;justify-content:space-between;gap:10px;
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"＋";color:var(--muted);font-weight:600}
+  details[open] summary::after{content:"－"}
+  details p{margin:10px 0 0;font-size:15px;color:#5A6470}
+
+  /* sources */
+  .sources{font-size:13.5px;color:var(--muted);line-height:1.7}
+  .sources a{color:#2F6FED;word-break:break-all}
+  .sources ul{margin:8px 0 0;padding-left:18px}
+  .sources li{margin-bottom:6px}
+
+  footer{
+    margin-top:36px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted);text-align:center;line-height:1.7;
+  }
+  .updated{display:inline-block;background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:5px 12px;font-size:12.5px;margin-bottom:10px}
+  @media (max-width:400px){
+    body{font-size:16px}
+    h1{font-size:25px}
+    .step{padding:18px 16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="badge">빈칸 채우기 가이드 · 앱 편</div>
+  <h1>바이낸스 서브 계정<br>만들기</h1>
+  <p>휴대폰 앱에서 9단계 · 약 10분<br>그림 속 <b style="color:#B3261E">빨간 박스</b>를 그대로 눌러요</p>
+  <div class="facts">
+    <span>📱 바이낸스 앱</span>
+    <span>🪪 본인 인증 필요</span>
+    <span>🔐 보안 2가지 필요</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ================= 소개 ================= -->
+  <section>
+    <div class="card intro">
+      <p><b>서브 계정(Sub-account)</b>은 내 <b>주계정 아래에 하나 더 만드는 ‘작은 계정’</b>이에요.
+      돈을 따로 보관하거나, 거래를 나눠서 할 때 써요. 서브 계정은 따로 회원가입하는 게 아니라
+      <b>주계정에 붙는 계정</b>이라서, 본인 인증도 주계정 것을 그대로 써요.</p>
+    </div>
+  </section>
+
+  <!-- ================= 준비물 ================= -->
+  <section>
+    <h2>시작하기 전에 — 준비물 4가지</h2>
+    <p class="lead">하나라도 빠지면 중간에 막혀요. 먼저 확인해요.</p>
+    <div class="card">
+      <ul class="check">
+        <li>
+          <div class="ico">📱</div>
+          <div class="txt">
+            <strong>바이낸스 앱 + 주계정 로그인</strong>
+            <span>앱을 최신 버전으로 업데이트하고, 서브 계정을 만들 ‘주계정(마스터)’으로 로그인해요.</span>
+          </div>
+        </li>
+        <li>
+          <div class="ico">🪪</div>
+          <div class="txt">
+            <strong>본인 인증(KYC) 완료</strong>
+            <span>앱 <span class="ui">Account Info</span> <span class="ko">(계정 정보)</span> › <span class="ui">Verifications</span> <span class="ko">(인증)</span> 에 초록색 <b style="color:#0E9F6E">Verified</b> 가 보여야 해요.</span>
+          </div>
+        </li>
+        <li>
+          <div class="ico">🔐</div>
+          <div class="txt">
+            <strong>보안 확인 2가지</strong>
+            <span>만들 때 <b>이메일 코드</b>와 <b>구글 OTP</b>(또는 SMS) 숫자를 물어봐요. 미리 켜 두세요.</span>
+          </div>
+        </li>
+        <li>
+          <div class="ico">📧</div>
+          <div class="txt">
+            <strong>서브 계정 전용 이메일</strong>
+            <span>지금까지 바이낸스에 쓴 적 <b>없는</b> 이메일이어야 해요. 없으면 새로 만들어요.</span>
+          </div>
+        </li>
+      </ul>
+      <div class="note-inline">
+        💡 비밀번호도 미리 정해 두면 빨라요. 일반 계정은 서브 계정을 <b>5개까지</b> 만들 수 있어요.
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 단계 ================= -->
+  <section>
+    <h2>따라 하기 — 9단계</h2>
+    <p class="lead">위에서부터 순서대로 하면 돼요. 1~7단계가 ‘만들기’, 8~9단계가 ‘돈 옮기기’예요.</p>
+
+    <!-- STEP 1 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">1</div>
+        <h3>앱 첫 화면에서 <b>왼쪽 위 프로필</b>을 눌러요</h3>
+      </div>
+      <figure class="phone">
+        <img src="img/step1_marked.png" alt="바이낸스 앱 첫 화면. 왼쪽 위 프로필 아이콘에 빨간 박스가 표시되어 있다.">
+        <figcaption>빨간 박스 = 누를 곳</figcaption>
+      </figure>
+      <p class="where">앱을 열면 맨 윗줄 <b>왼쪽</b>에 동그란 사람 모양 아이콘이 있어요. 그걸 눌러요.</p>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">2</div>
+        <h3><span class="ui">Account Info</span>에서 <span class="ui">Sub Accounts</span>를 눌러요</h3>
+      </div>
+      <figure class="phone">
+        <img src="img/step2_marked.png" alt="바이낸스 앱 Account Info 화면. 맨 아래 Sub Accounts 줄에 빨간 박스가 표시되어 있다.">
+        <figcaption>Account Info (계정 정보) → Sub Accounts (서브 계정)</figcaption>
+      </figure>
+      <p class="where">
+        내 사진과 <b>UID</b>, 인증 상태가 보이는 화면이에요.
+        <b>Verifications</b>(인증)이 <b style="color:#0E9F6E">Verified</b> 인지 확인하고,
+        목록의 마지막 <span class="ui">Sub Accounts</span> <span class="ko">(서브 계정)</span> 를 눌러요.
+      </p>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">3</div>
+        <h3><span class="ui">+ Create Sub Account</span>를 눌러요</h3>
+      </div>
+      <figure class="phone">
+        <img src="img/step3_marked.png" alt="바이낸스 앱 Sub Account 화면. + Create Sub Account 버튼에 빨간 박스가 표시되어 있다.">
+        <figcaption>Sub Account (서브 계정) → + Create Sub Account (서브 계정 만들기)</figcaption>
+      </figure>
+      <p class="where">
+        <b>Sub Account</b> 화면이 열려요. 위쪽 <span class="ui">Account Management</span> <span class="ko">(계정 관리)</span>
+        가 선택된 상태에서, 회색 버튼 <span class="ui">+ Create Sub Account</span> <span class="ko">(서브 계정 만들기)</span> 를 눌러요.
+        처음이라 <b>“No records found.”</b> 라고 나오는 게 정상이에요.<br><span style="color:#8A6D00">버튼이 안 보이면 맨 아래 <b>‘꼭 알아둘 점’</b>을 먼저 봐요.</span>
+      </p>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">4</div>
+        <h3>종류는 <span class="ui">Create with email</span>을 골라요</h3>
+      </div>
+      <figure>
+        <img src="img/step4_marked.png" alt="Create Sub Account 창의 Sub Account Type 목록. Create with email 항목에 빨간 박스와 1번 표시가 있다.">
+        <figcaption>Sub Account Type (서브 계정 종류) → Create with email (이메일로 만들기)</figcaption>
+      </figure>
+      <ul class="tap">
+        <li><span class="dot">1</span><b>Sub Account Type</b> 칸을 누르면 목록이 열려요. 맨 위 <span class="ui">Create with email</span> <span class="ko">(이메일로 만들기)</span> 를 골라요.</li>
+      </ul>
+      <div class="why">
+        <b>왜 첫 번째를 골라요?</b><br>
+        · <span class="ui">Create with virtual email</span> <span class="ko">(가상 이메일)</span> → 로그인을 못 하고 <b>API 전용</b>이에요.<br>
+        · <span class="ui">3rd-Party Custodian</span> → 회사·기관용이에요.<br>
+        그래서 우리는 <b>직접 로그인도 되는</b> 첫 번째를 골라요.
+      </div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">5</div>
+        <h3>이메일과 비밀번호를 적어요</h3>
+      </div>
+      <figure>
+        <img src="img/step5_marked.png" alt="Create Sub Account 창에 이메일과 비밀번호를 입력한 화면. 세 칸에 빨간 박스와 1,2,3번 표시가 있다.">
+        <figcaption>Create with email (이메일) · Password (비밀번호) · Confirm Password (비밀번호 확인)</figcaption>
+      </figure>
+      <ul class="tap">
+        <li><span class="dot">1</span><b>Create with email</b> 칸에 <b>서브 계정 전용 이메일</b>을 적어요.</li>
+        <li><span class="dot">2</span><b>Password</b> <span class="ko">(비밀번호)</span> 칸에 쓸 비밀번호를 적어요.</li>
+        <li><span class="dot">3</span><b>Confirm Password</b> <span class="ko">(비밀번호 확인)</span> 칸에 같은 비밀번호를 한 번 더 적어요.</li>
+      </ul>
+      <p class="where" style="margin-top:14px">다 적었으면 맨 아래 노란 <span class="ui">Create Sub Account</span> 버튼을 눌러요.</p>
+      <div class="why">
+        ⚠️ 이미 바이낸스에 가입된 이메일은 안 돼요. “이미 등록된 이메일”이라는 안내가 나오면 다른 이메일을 써요.
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">6</div>
+        <h3>보안 숫자 2개를 넣어요</h3>
+      </div>
+      <figure>
+        <img src="img/step6_marked.png" alt="Account verification 창. 이메일 인증 번호, OTP 번호, Confirm 버튼에 각각 1,2,3번 표시가 있다.">
+        <figcaption>Account verification (계정 확인) 창</figcaption>
+      </figure>
+      <ul class="tap">
+        <li><span class="dot">1</span><b>Sub Account Email Verification Code</b> <span class="ko">(서브 계정 이메일 인증 번호)</span> — 옆의 <span class="ui">Get Code</span> 를 누르면 서브 계정 이메일로 <b>6자리 숫자</b>가 와요. 그걸 적어요.</li>
+        <li><span class="dot">2</span><b>Main Account Authenticator Code</b> <span class="ko">(주계정 OTP 번호)</span> — 구글 OTP 앱에 뜬 <b>6자리 숫자</b>를 적어요.</li>
+        <li><span class="dot">3</span>노란 <span class="ui">Confirm</span> <span class="ko">(확인)</span> 버튼을 눌러요.</li>
+      </ul>
+      <div class="why">
+        ⏱️ OTP 숫자는 <b>30초마다 바뀌어요</b>. “틀렸다”고 나오면 새 숫자를 넣어요.
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">7</div>
+        <h3>목록에 새 서브 계정이 생겼어요</h3>
+      </div>
+      <figure class="phone">
+        <img src="img/step7_marked.png" alt="바이낸스 앱 Account Management 목록에 새 서브 계정이 표시된 화면. 그 줄에 빨간 박스가 있다.">
+        <figcaption>Account Management (계정 관리) 목록</figcaption>
+      </figure>
+      <p class="where">
+        <span class="ui">Account Management</span> 목록에 방금 만든 계정이 보여요.
+        이메일, <b>User ID</b>, <b style="color:#0E9F6E">Normal</b> 상태, 만든 날짜를 확인해요.
+      </p>
+      <div class="why">
+        📬 서브 계정 이메일함에 바이낸스 메일이 와요. 인증하라는 안내가 있으면 그 링크를 눌러 마무리해요.<br>
+        🔄 그 줄의 <b>⋮</b> 를 눌러 <span class="ui">Enable Switch</span> 를 켜면, 앱에서 <b>계정 전환</b>으로 서브 계정에 바로 들어갈 수 있어요.
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 돈 옮기기 ================= -->
+  <section>
+    <h2>만들었으면 — 돈 옮기기</h2>
+    <p class="lead">새로 만든 서브 계정은 잔액이 0이에요. 필요한 만큼 옮겨요.</p>
+
+    <!-- STEP 8 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">8</div>
+        <h3><span class="ui">Asset Management</span>를 골라요</h3>
+      </div>
+      <figure class="phone">
+        <img src="img/step8_marked.png" alt="바이낸스 앱 Sub Account 메뉴가 열린 화면. Asset Management 항목에 빨간 박스가 있다.">
+        <figcaption>Sub Account ⌄ → Asset Management (자산 관리)</figcaption>
+      </figure>
+      <p class="where">
+        <b>Sub Account</b> 화면 위쪽 <span class="ui">Account Management ⌄</span> 를 누르면 메뉴가 열려요.
+        거기서 <span class="ui">Asset Management</span> <span class="ko">(자산 관리)</span> 를 골라요.
+      </p>
+    </div>
+
+    <!-- STEP 9 -->
+    <div class="step">
+      <div class="step-head">
+        <div class="num">9</div>
+        <h3><span class="ui">Transfer</span>로 옮기면 끝!</h3>
+      </div>
+      <figure>
+        <img src="img/step9_marked.png" alt="바이낸스 이체 완료 창. Transfer completed 메시지와 보낸 계정, 받는 계정, 수량, 날짜가 보인다.">
+        <figcaption>Transfer (이체) → 완료 화면</figcaption>
+      </figure>
+      <p class="where">
+        <span class="ui">Transfer</span> <span class="ko">(이체)</span> 를 누르고
+        <b>보내는 계정 → 받는 서브 계정 → 코인 → 수량</b> 순서로 고른 뒤 확인해요.
+        주계정과 서브 계정 사이 이체는 <b>수수료 0원</b>, <b>바로</b> 들어가요.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 주의사항 ================= -->
+  <section>
+    <h2>꼭 알아둘 점</h2>
+    <div class="card danger" style="margin-bottom:12px">
+      <h3 style="margin:0 0 6px;font-size:17px">🔒 출금은 서브 계정에서 못 해요</h3>
+      <p style="margin:0;font-size:15px;color:#7A3030">서브 계정은 스스로 출금하거나 다른 계정으로 보낼 수 없어요. 돈은 꼭 <b>주계정에서</b> 옮겨요.</p>
+    </div>
+    <div class="card warn" style="margin-bottom:12px">
+      <h3 style="margin:0 0 6px;font-size:17px">🧬 서브 계정은 주계정과 ‘한 몸’이에요</h3>
+      <p style="margin:0;font-size:15px;color:#7A4B00">본인 인증을 같이 쓰기 때문에, 서브 계정으로 규칙을 어기면 <b>주계정도 위험</b>해져요. 모르는 사람에게 서브 계정을 넘기지 마세요.</p>
+    </div>
+    <div class="card" style="margin-bottom:12px">
+      <h3 style="margin:0 0 6px;font-size:17px">📵 앱에 <span class="ui">+ Create Sub Account</span> 가 안 보인다면</h3>
+      <p style="margin:0;font-size:15px">PC나 휴대폰 <b>브라우저</b>로 <b>binance.com</b> 에 로그인 → 프로필 → <span class="ui">Dashboard</span> → <span class="ui">Sub Accounts</span> → <span class="ui">Account Management</span> 에 들어가면 <b>똑같은 버튼</b>이 있어요. 처음 한 번은 웹에서만 만들어야 하는 계정도 있어요.</p>
+    </div>
+    <div class="card">
+      <ul class="tips">
+        <li><span class="ico">👑</span><span>VIP 1 이상 계정은 서브 계정이 <b>자동으로</b> 생겨요. 목록은 매일 01:00(UTC)에 새로 고쳐져요.</span></li>
+        <li><span class="ico">🧾</span><span>서브 계정은 일반 개인 계정 <b>5개</b>부터 시작해요. VIP 등급이 높으면 개인 계정은 최대 30개, 기업 계정은 최대 200개까지 늘어나요.</span></li>
+        <li><span class="ico">🗑️</span><span>서브 계정을 닫으면 <b>되돌릴 수 없어요</b>. 닫기 전에 자산·미체결 주문·API 키를 먼저 정리해요.</span></li>
+        <li><span class="ico">🛡️</span><span>서브 계정에도 구글 OTP를 따로 켜 두면 더 안전해요(주계정과 다른 OTP로).</span></li>
+        <li><span class="ico">🔑</span><span>프로그램(API)으로 거래할 거라면 <span class="ui">API Management</span> 에서 서브 계정용 API 키를 만들어요.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section>
+    <h2>자주 묻는 질문</h2>
+    <details>
+      <summary>서브 계정도 본인 인증을 따로 해야 하나요?</summary>
+      <p>아니요. 주계정의 인증을 그대로 써요. 대신 서브 계정으로 <b>처음 로그인할 때</b> 이메일 확인을 한 번 해요.</p>
+    </details>
+    <details>
+      <summary>서브 계정으로 앱에 로그인할 수 있나요?</summary>
+      <p><b>Create with email</b>로 만들었다면 네. 그 이메일과 비밀번호로 로그인해요. <b>가상 이메일</b>로 만들면 로그인이 안 되고 API로만 쓸 수 있어요.</p>
+    </details>
+    <details>
+      <summary>주계정에서 서브 계정으로 돈은 어떻게 보내요?</summary>
+      <p><span class="ui">Asset Management</span> › <span class="ui">Transfer</span> 에서 보내요. 수수료가 없고 바로 들어가요. 반대 방향도 같은 방법이에요.</p>
+    </details>
+    <details>
+      <summary>서브 계정이 몇 개까지 되나요?</summary>
+      <p>일반 개인 계정은 <b>5개</b>예요. VIP 등급이 높아지면 개인 계정은 최대 30개, 기업 계정은 최대 200개까지 늘어나요.</p>
+    </details>
+  </section>
+
+  <!-- ================= 출처 ================= -->
+  <section>
+    <h2 style="font-size:17px">자료 출처</h2>
+    <div class="card sources">
+      <ul>
+        <li>Binance 고객센터, “Binance Sub-Account Functions and Frequently Asked Questions” (2026-09-29 업데이트) —
+          <a href="https://www.binance.com/en/support/faq/detail/360020632811" target="_blank" rel="noopener">binance.com/support/faq/detail/360020632811</a></li>
+        <li>Binance 고객센터, “How to Switch Between Multiple Binance Accounts” (앱 계정 전환) —
+          <a href="https://www.binance.com/en/support/faq/detail/63e6942cb1f64f26ba8841241ff6c5ab" target="_blank" rel="noopener">binance.com/support/faq/detail/63e6942cb1f64f26ba8841241ff6c5ab</a></li>
+        <li>화면 이미지: 공개 가이드(MyITS, CoinTech2u, Stoic Help Center)에 올라온 <b>실제 바이낸스 앱·웹 화면</b>을 잘라 쓰고, 누를 곳만 직접 표시했어요.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="updated">2026년 11월 기준 화면</div>
+    <div>앱 버전과 사는 지역에 따라 화면이 조금 다를 수 있어요.<br>버튼 이름이 다르면 뜻이 같은 메뉴를 찾아 누르면 돼요.</div>
+  </footer>
+
+</div>
+</body>
+</html>
